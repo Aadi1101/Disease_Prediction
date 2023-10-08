@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Disease Prediction</title>
+</head>
+<body>
+  <h1>Disease Prediction Using Machine Learning</h1>
+
+  <h2>Introduction:</h2>
+  <p>
+    Predicting diseases based on various symptoms is a critical application of machine learning and healthcare. This project focuses on developing a disease prediction model using a wide range of symptoms and medical indicators. The goal is to assist healthcare professionals in early disease diagnosis and treatment.
+  </p>
+
+  <h2>Dataset Description:</h2>
+  <p>
+    The dataset used in this study comprises anonymized patient data, including a multitude of symptoms and medical indicators. It contains features such as itching, skin rash, nodal skin eruptions, continuous sneezing, shivering, chills, joint pain, stomach pain, acidity, ulcers on tongue, muscle wasting, vomiting, burning micturition, spotting urination, fatigue, weight gain, anxiety, and numerous others.
+  </p>
+
+  <h2>Feature Explanations:</h2>
+  <p>
+    The features in the dataset include a wide range of symptoms and medical indicators, including but not limited to:
+    <ul>
+      <li>Itching</li>
+      <li>Skin rash</li>
+      <li>Nodal skin eruptions</li>
+      <li>Continuous sneezing</li>
+      <li>Shivering</li>
+      <li>Chills</li>
+      <li>Joint pain</li>
+      <li>Stomach pain</li>
+      <li>Acidity</li>
+      <li>Ulcers on tongue</li>
+      <li>Muscle wasting</li>
+      <li>Vomiting</li>
+      <li>Burning micturition</li>
+      <li>Spotting urination</li>
+      <li>Fatigue</li>
+      <li>Weight gain</li>
+      <li>Anxiety</li>
+      <li>Cold hands and feet</li>
+      <li>Mood swings</li>
+      <li>Weight loss</li>
+      <li>Restlessness</li>
+      <li>Lethargy</li>
+      <li>Patches in throat</li>
+      <li>Irregular sugar level</li>
+      <li>Cough</li>
+      <li>High fever</li>
+      <li>Sunken eyes</li>
+      <li>Breathlessness</li>
+      <li>Sweating</li>
+      <li>Dehydration</li>
+      <li>Indigestion</li>
+      <li>Headache</li>
+      <li>Yellowish skin</li>
+      <li>Dark urine</li>
+      <li>Nausea</li>
+      <li>Loss of appetite</li>
+      <li>Pain behind the eyes</li>
+      <li>Back pain</li>
+      <li>Constipation</li>
+      <li>Abdominal pain</li>
+      <li>Diarrhea</li>
+      <li>Mild fever</li>
+      <li>Yellow urine</li>
+      <li>Yellowing of eyes</li>
+      <li>Acute liver failure</li>
+      <li>Fluid overload</li>
+      <li>Swelling of stomach</li>
+      <li>Swelled lymph nodes</li>
+      <li>Malaise</li>
+      <li>Blurred and distorted vision</li>
+      <li>Phlegm</li>
+      <li>Throat irritation</li>
+      <li>Redness of eyes</li>
+      <li>Sinus pressure</li>
+      <li>Runny nose</li>
+      <li>Congestion</li>
+      <li>Chest pain</li>
+      <li>Weakness in limbs</li>
+      <li>Fast heart rate</li>
+      <li>Pain during bowel movements</li>
+      <li>Pain in anal region</li>
+      <li>Bloody stool</li>
+      <li>Irritation in anus</li>
+      <li>Neck pain</li>
+      <li>Dizziness</li>
+      <li>Cramps</li>
+      <li>Bruising</li>
+      <li>Obesity</li>
+      <li>Swollen legs</li>
+      <li>Swollen blood vessels</li>
+      <li>Puffy face and eyes</li>
+      <li>Enlarged thyroid</li>
+      <li>Brittle nails</li>
+      <li>Swollen extremities</li>
+      <li>Excessive hunger</li>
+      <li>Extra marital contacts</li>
+      <li>Drying and tingling lips</li>
+      <li>Slurred speech</li>
+      <li>Knee pain</li>
+      <li>Hip joint pain</li>
+      <li>Muscle weakness</li>
+      <li>Stiff neck</li>
+      <li>Swelling joints</li>
+      <li>Movement stiffness</li>
+      <li>Spinning movements</li>
+      <li>Loss of balance</li>
+      <li>Unsteadiness</li>
+      <li>Weakness of one body side</li>
+      <li>Loss of smell</li>
+      <li>Bladder discomfort</li>
+      <li>Foul smell of urine</li>
+      <li>Continuous feeling of urine</li>
+      <li>Passage of gases</li>
+      <li>Internal itching</li>
+      <li>Toxic look (typhos)</li>
+      <li>Depression</li>
+      <li>Irritability</li>
+      <li>Muscle pain</li>
+      <li>Altered sensorium</li>
+      <li>Red spots over body</li>
+      <li>Belly pain</li>
+      <li>Abnormal menstruation</li>
+      <li>Dischromic patches</li>
+      <li>Watering from eyes</li>
+      <li>Increased appetite</li>
+      <li>Polyuria</li>
+      <li>Family history</li>
+      <li>Mucoid sputum</li>
+      <li>Rusty sputum</li>
+      <li>Lack of concentration</li>
+      <li>Visual disturbances</li>
+      <li>Receiving blood transfusion</li>
+      <li>Receiving unsterile injections</li>
+      <li>Coma</li>
+      <li>Stomach bleeding</li>
+      <li>Distention of abdomen</li>
+      <li>History of alcohol consumption</li>
+      <li>Fluid overload</li>
+      <li>Blood in sputum</li>
+      <li>Prominent veins on calf</li>
+      <li>Palpitations</li>
+      <li>Painful walking</li>
+      <li>Pus-filled pimples</li>
+      <li>Blackheads</li>
+      <li>Scurring</li>
+      <li>Skin peeling</li>
+      <li>Silver-like dusting</li>
+      <li>Small dents in nails</li>
+      <li>Inflammatory nails</li>
+      <li>Blister</li>
+      <li>Red sore around nose</li>
+      <li>Yellow crust ooze</li>
+    </ul>
+  </p>
+
+  <h2>Input formats</h2>
+  <ul>
+    <li>update url:/predict?data=itching,skin_rash,nodal_skin_eruptions,continuous_sneezing,shivering,chills,joint_pain,stomach_pain,acidity,ulcers_on_tongue,muscle_wasting,vomiting,burning_micturition,spotting_ urination,fatigue,weight_gain,anxiety,cold_hands_and_feets,mood_swings,weight_loss,restlessness,lethargy,patches_in_throat,irregular_sugar_level,cough,high_fever,sunken_eyes,breathlessness,sweating,dehydration,indigestion,headache,yellowish_skin,dark_urine,nausea,loss_of_appetite,pain_behind_the_eyes,back_pain,constipation,abdominal_pain,diarrhoea,mild_fever,yellow_urine,yellowing_of_eyes,acute_liver_failure,fluid_overload,swelling_of_stomach,swelled_lymph_nodes,malaise,blurred_and_distorted_vision,phlegm,throat_irritation,redness_of_eyes,sinus_pressure,runny_nose,congestion,chest_pain,weakness_in_limbs,fast_heart_rate,pain_during_bowel_movements,pain_in_anal_region,bloody_stool,irritation_in_anus,neck_pain,dizziness,cramps,bruising,obesity,swollen_legs,swollen_blood_vessels,puffy_face_and_eyes,enlarged_thyroid,brittle_nails,swollen_extremeties,excessive_hunger,extra_marital_contacts,drying_and_tingling_lips,slurred_speech,knee_pain,hip_joint_pain,muscle_weakness,stiff_neck,swelling_joints,movement_stiffness,spinning_movements,loss_of_balance,unsteadiness,weakness_of_one_body_side,loss_of_smell,bladder_discomfort,foul_smell_of urine,continuous_feel_of_urine,passage_of_gases,internal_itching,toxic_look_(typhos),depression,irritability,muscle_pain,altered_sensorium,red_spots_over_body,belly_pain,abnormal_menstruation,dischromic _patches,watering_from_eyes,increased_appetite,polyuria,family_history,mucoid_sputum,rusty_sputum,lack_of_concentration,visual_disturbances,receiving_blood_transfusion,receiving_unsterile_injections,coma,stomach_bleeding,distention_of_abdomen,history_of_alcohol_consumption,fluid_overload,blood_in_sputum,prominent_veins_on_calf,palpitations,painful_walking,pus_filled_pimples,blackheads,scurring,skin_peeling,silver_like_dusting,small_dents_in_nails,inflammatory_nails,blister,red_sore_around_nose,yellow_crust_ooze</li>
+    <li>Enter data as json file:{"data":"itching,skin_rash,nodal_skin_eruptions,continuous_sneezing,shivering,chills,joint_pain,stomach_pain,acidity,ulcers_on_tongue,muscle_wasting,vomiting,burning_micturition,spotting_ urination,fatigue,weight_gain,anxiety,cold_hands_and_feets,mood_swings,weight_loss,restlessness,lethargy,patches_in_throat,irregular_sugar_level,cough,high_fever,sunken_eyes,breathlessness,sweating,dehydration,indigestion,headache,yellowish_skin,dark_urine,nausea,loss_of_appetite,pain_behind_the_eyes,back_pain,constipation,abdominal_pain,diarrhoea,mild_fever,yellow_urine,yellowing_of_eyes,acute_liver_failure,fluid_overload,swelling_of_stomach,swelled_lymph_nodes,malaise,blurred_and_distorted_vision,phlegm,throat_irritation,redness_of_eyes,sinus_pressure,runny_nose,congestion,chest_pain,weakness_in_limbs,fast_heart_rate,pain_during_bowel_movements,pain_in_anal_region,bloody_stool,irritation_in_anus,neck_pain,dizziness,cramps,bruising,obesity,swollen_legs,swollen_blood_vessels,puffy_face_and_eyes,enlarged_thyroid,brittle_nails,swollen_extremeties,excessive_hunger,extra_marital_contacts,drying_and_tingling_lips,slurred_speech,knee_pain,hip_joint_pain,muscle_weakness,stiff_neck,swelling_joints,movement_stiffness,spinning_movements,loss_of_balance,unsteadiness,weakness_of_one_body_side,loss_of_smell,bladder_discomfort,foul_smell_of urine,continuous_feel_of_urine,passage_of_gases,internal_itching,toxic_look_(typhos),depression,irritability,muscle_pain,altered_sensorium,red_spots_over_body,belly_pain,abnormal_menstruation,dischromic _patches,watering_from_eyes,increased_appetite,polyuria,family_history,mucoid_sputum,rusty_sputum,lack_of_concentration,visual_disturbances,receiving_blood_transfusion,receiving_unsterile_injections,coma,stomach_bleeding,distention_of_abdomen,history_of_alcohol_consumption,fluid_overload,blood_in_sputum,prominent_veins_on_calf,palpitations,painful_walking,pus_filled_pimples,blackheads,scurring,skin_peeling,silver_like_dusting,small_dents_in_nails,inflammatory_nails,blister,red_sore_around_nose,yellow_crust_ooze"}</li>
+  </ul>
+
+  <h2>Conclusion:</h2>
+  <p>
+    The developed disease prediction model will serve as a valuable tool for healthcare professionals to assist in diagnosing diseases based on symptoms and medical indicators. Early detection and timely treatment can significantly improve patient outcomes and overall healthcare efficiency.
+  </p>
+</body>
+</html>
