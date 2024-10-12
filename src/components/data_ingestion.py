@@ -21,7 +21,7 @@ class DataIngestion():
 
     def initiate_data_ingestion(self):
         try:
-            df = pd.read_csv('/content/notebooks/Training.csv')
+            df = pd.read_csv('notebooks/Training.csv')
             logging.info("Read the data")
             os.makedirs(os.path.dirname(self.ingestion_config.raw_data_path),exist_ok=True)
             df.to_csv(self.ingestion_config.raw_data_path,index=False,header=True)

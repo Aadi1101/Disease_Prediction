@@ -1,6 +1,6 @@
 {
     "Decision Tree": 0.7459349593495935, 
-    "AdaboostClassifier": 0.9939024390243902, 
+    "AdaboostClassifier": 0.9984756097560976, 
     "Gradient Boosting Classifier": 1.0, 
     "Random Forest Classifier": 1.0, 
     "Support Vector Machine": 1.0, 
