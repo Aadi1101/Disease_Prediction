@@ -5,7 +5,6 @@ colorama==0.4.6
 contourpy==1.3.0
 cycler==0.12.1
 dill==0.3.9
--e git+https://github.com/Aadi1101/Disease_Prediction.git@3b2f1ecad8645363f0634b44e2b93c6ba27e9176#egg=disease_prediction
 Flask==3.0.3
 fonttools==4.54.1
 graphviz==0.20.3
