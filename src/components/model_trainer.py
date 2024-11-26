@@ -46,45 +46,57 @@ class ModelTrainer():
             }
             params = {
                 'Logistic Regression':{
-                    'penalty':['elasticnet','l1','l2']
+                    'penalty':['elasticnet','l1','l2'],
+                    'C': [0.1, 1, 10],                     # Regularization strength
+                    'solver': ['saga', 'liblinear']        # Compatible solvers for elasticnet, l1, l2  
                 },
                 'Decision Tree':{
                     'max_depth':[10,20,30],
-                    'min_samples_split':[2,5,10]
+                    'min_samples_split':[2,5,10],
+                    'min_samples_leaf': [1, 2, 4]
                 },
                 'AdaboostClassifier':{
-                    'n_estimators':[100,150,200],
+                    'n_estimators':[50,100,150,200],
                     'learning_rate':[0.1,0.01,0.001]
                 },
                 'Gradient Boosting Classifier':{
                     'n_estimators':[100,150,200],
-                    #'max_depth':[10,20,30],
+                    'max_depth':[3,5,10],
                     'learning_rate':[0.1,0.01,0.001]
                 },
                 'Random Forest Classifier':{
-                    'n_estimators':[450],
-                    'max_features':['log2'],
-                    'max_depth':[340],
-                    'min_samples_split':[3],
-                    'min_samples_leaf':[8,10,12],
-                    'criterion':['gini']
+                    'n_estimators': [100, 200, 450],       # Broader range of estimators
+                    'max_features': ['sqrt', 'log2'],      # Added 'sqrt' (default for classification)
+                    'max_depth': [50, 100, 340, None],     # Broader range and added None
+                    'min_samples_split': [2, 3, 5],        # Common starting values
+                    'min_samples_leaf': [1, 5, 10],        # Added smaller values for leaf nodes
+                    'criterion': ['gini', 'entropy']       # Added entropy as an option
                 },
                 'Support Vector Machine':{
-                    'kernel':['linear','poly','sigmoid','rbf'],
-                    'gamma':['scale','auto']
+                    'kernel': ['linear', 'poly', 'sigmoid', 'rbf'],
+                    'gamma': ['scale', 'auto'],
+                    'C': [0.1, 1, 10]                      # Regularization parameter
                 },
                 'K Nearest Neighbours':{
-                    'metric':['euclidean']
+                    'n_neighbors': [3, 5, 7, 10],          # Added common k values
+                    'metric': ['euclidean', 'manhattan']   # Added manhattan for variety    
                 },
                 'Naive Bayes':{
-
+                    'var_smoothing': [1e-9, 1e-8, 1e-7]    # Common range for variance smoothing
                 },
                 'Catboost Classifier':{
-                    'learning_rate':[0.1,0.01,0.001],
-                    #'depth':[10,20,30],
-                    'l2_leaf_reg':[2,3,4]
+                    'iterations': [100, 200, 300],         # Number of boosting rounds
+                    'learning_rate': [0.1, 0.01, 0.001],
+                    'depth': [6, 8, 10],                   # Typical values for CatBoost depth
+                    'l2_leaf_reg': [1, 3, 5]               # Regularization parameter
                 },
-                "XGBoost Classifier":{}
+                "XGBoost Classifier":{
+                    'n_estimators': [100, 150, 200],       # Reasonable boosting rounds
+                    'learning_rate': [0.1, 0.01, 0.001],
+                    'max_depth': [3, 6, 10],               # Depth similar to Gradient Boosting
+                    'colsample_bytree': [0.6, 0.8, 1.0],  # Fraction of features for boosting
+                    'subsample': [0.8, 1.0]                # Fraction of samples for boosting
+                }
             }
 
             model_report:dict = evaluate_models(x_train,y_train,x_test,y_test,models,params)

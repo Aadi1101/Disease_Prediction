@@ -27,6 +27,7 @@ def evaluate_models(x_train,y_train,x_test,y_test,models,param):
             rs.fit(x_train,y_train)
             logging.info(f"RandomizedSearchCV fit done and set_params initiated for {model}.")
             model.set_params(**rs.best_params_)
+            params = rs.best_params_
             logging.info(f"setting parameters completed and fitting initiated for {model}.")
             model.fit(x_train,y_train)
             logging.info(f"prediction initiated for {model}.")
@@ -46,7 +47,8 @@ def evaluate_models(x_train,y_train,x_test,y_test,models,param):
                 "precision": precision,  # Classification metric
                 "recall": recall,        # Classification metric
                 "f1_score": f1,          # Classification metric
-                "roc_auc_score": roc_auc,  # Useful for binary classification
+                "roc_auc_score": roc_auc, # Useful for binary classification
+                "params": params 
             }
             logging.info(f"Obtained accuracy of {test_model_accuracy} and completed with {model}.")
         return report
