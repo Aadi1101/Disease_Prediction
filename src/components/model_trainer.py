@@ -37,7 +37,7 @@ class ModelTrainer():
                 "AdaboostClassifier":AdaBoostClassifier(),
                 "Gradient Boosting Classifier":GradientBoostingClassifier(verbose=1),
                 "Random Forest Classifier":RandomForestClassifier(verbose=1),
-                "Support Vector Machine":SVC(verbose=True),
+                "Support Vector Machine":SVC(verbose=True,probability=True),
                 "K Nearest Neighbours":KNeighborsClassifier(),
                 "Naive Bayes":GaussianNB(),
                 "Catboost Classifier":CatBoostClassifier(verbose=1),
@@ -88,11 +88,8 @@ class ModelTrainer():
             }
 
             model_report:dict = evaluate_models(x_train,y_train,x_test,y_test,models,params)
-            best_model_score = max(sorted(model_report.values()))
-            best_model_name = list(model_report.keys())[
-                list(model_report.values()).index(best_model_score)
-            ]
-
+            best_model_name = max(model_report,key=lambda name: model_report[name]["test_accuracy"])
+            best_model_score = model_report[best_model_name]["test_accuracy"]
             best_model = models[best_model_name]
 
             if best_model_score<0.6:

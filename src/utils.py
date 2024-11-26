@@ -1,5 +1,5 @@
 import os,sys
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
 from sklearn.model_selection import RandomizedSearchCV
 import dill,json
 from src.logger import logging
@@ -35,7 +35,19 @@ def evaluate_models(x_train,y_train,x_test,y_test,models,param):
             logging.info(f"Getting the accuracy for train and test data for {model}")
             train_model_accuracy = accuracy_score(y_true=y_train,y_pred=y_train_pred)
             test_model_accuracy = accuracy_score(y_true=y_test,y_pred=y_test_pred)
-            report[list(models.keys())[i]] = test_model_accuracy
+            precision = precision_score(y_true=y_test, y_pred=y_test_pred, average='macro',zero_division=0)
+            recall = recall_score(y_true=y_test, y_pred=y_test_pred, average='macro')
+            f1 = f1_score(y_true=y_test, y_pred=y_test_pred, average='macro')
+            roc_auc = roc_auc_score(y_true=y_test, y_score=model.predict_proba(x_test),multi_class="ovr")
+            report[list(models.keys())[i]] = {
+                "test_accuracy": test_model_accuracy,
+                "train_accuracy": train_model_accuracy,  # Ensure correct key matching
+                "accuracy_variance": train_model_accuracy - test_model_accuracy,  # For overfitting/underfitting check
+                "precision": precision,  # Classification metric
+                "recall": recall,        # Classification metric
+                "f1_score": f1,          # Classification metric
+                "roc_auc_score": roc_auc,  # Useful for binary classification
+            }
             logging.info(f"Obtained accuracy of {test_model_accuracy} and completed with {model}.")
         return report
     except Exception as e:

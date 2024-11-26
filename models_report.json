@@ -1,12 +1,92 @@
 {
-    "Decision Tree": 0.7459349593495935, 
-    "AdaboostClassifier": 0.9984756097560976, 
-    "Gradient Boosting Classifier": 1.0, 
-    "Random Forest Classifier": 1.0, 
-    "Support Vector Machine": 1.0, 
-    "K Nearest Neighbours": 0.9979674796747967, 
-    "Naive Bayes": 1.0, 
-    "Catboost Classifier": 1.0, 
-    "Logistic Regression": 1.0, 
-    "XGBoost Classifier": 1.0
+    "Decision Tree": {
+        "test_accuracy": 0.7459349593495935, 
+        "train_accuracy": 0.801490514905149, 
+        "accuracy_variance": 0.05555555555555547, 
+        "precision": 0.7825016782277915, 
+        "recall": 0.7753375960722664, 
+        "f1_score": 0.7688365757714245, 
+        "roc_auc_score": 0.9677036682495676
+    }, 
+    "AdaboostClassifier": {
+        "test_accuracy": 0.9939024390243902, 
+        "train_accuracy": 0.9939024390243902, 
+        "accuracy_variance": 0.0, 
+        "precision": 0.9938056523422377, 
+        "recall": 0.993787356627932, 
+        "f1_score": 0.9934525718646607, 
+        "roc_auc_score": 0.999790456320187
+    }, 
+    "Gradient Boosting Classifier": {
+        "test_accuracy": 1.0, 
+        "train_accuracy": 1.0, 
+        "accuracy_variance": 0.0, 
+        "precision": 1.0, 
+        "recall": 1.0, 
+        "f1_score": 1.0, 
+        "roc_auc_score": 1.0
+    }, 
+    "Random Forest Classifier": {
+        "test_accuracy": 1.0, 
+        "train_accuracy": 1.0, 
+        "accuracy_variance": 0.0, 
+        "precision": 1.0, 
+        "recall": 1.0, 
+        "f1_score": 1.0, 
+        "roc_auc_score": 1.0
+    }, 
+    "Support Vector Machine": {
+        "test_accuracy": 1.0, 
+        "train_accuracy": 1.0, 
+        "accuracy_variance": 0.0, 
+        "precision": 1.0, 
+        "recall": 1.0, 
+        "f1_score": 1.0, 
+        "roc_auc_score": 1.0
+    }, 
+    "K Nearest Neighbours": {
+        "test_accuracy": 0.9979674796747967, 
+        "train_accuracy": 0.9993224932249323, 
+        "accuracy_variance": 0.0013550135501355642, 
+        "precision": 0.9980089596814337, 
+        "recall": 0.9978791092258749, 
+        "f1_score": 0.9978534698306364, 
+        "roc_auc_score": 1.0
+    }, 
+    "Naive Bayes": {
+        "test_accuracy": 1.0, 
+        "train_accuracy": 1.0, 
+        "accuracy_variance": 0.0, 
+        "precision": 1.0, 
+        "recall": 1.0, 
+        "f1_score": 1.0, 
+        "roc_auc_score": 1.0
+    }, 
+    "Catboost Classifier": {
+        "test_accuracy": 1.0, 
+        "train_accuracy": 1.0, 
+        "accuracy_variance": 0.0, 
+        "precision": 1.0, 
+        "recall": 1.0, 
+        "f1_score": 1.0, 
+        "roc_auc_score": 1.0
+    }, 
+    "Logistic Regression": {
+        "test_accuracy": 1.0, 
+        "train_accuracy": 1.0, 
+        "accuracy_variance": 0.0, 
+        "precision": 1.0, 
+        "recall": 1.0, 
+        "f1_score": 1.0, 
+        "roc_auc_score": 1.0
+    }, 
+    "XGBoost Classifier": {
+        "test_accuracy": 1.0, 
+        "train_accuracy": 1.0, 
+        "accuracy_variance": 0.0, 
+        "precision": 1.0, 
+        "recall": 1.0, 
+        "f1_score": 1.0, 
+        "roc_auc_score": 1.0
+    }
 }
